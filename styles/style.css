@@ -13,4 +13,45 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  font-family: var(--main-font-family);
+  font-variation-settings: 'wght' var(--text-font-weight);
+  background-image: var(--background-gradient);
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.content-block {
+  min-block-size: 368px;
+  inline-size: var(--block-width);
+  background-color: #fff;
+  /*центрируем*/
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  outline: 2px solid #000;
+}
+
+.header {
+  margin: 100px auto;
+  display: flex;
+  flex-direction: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.header__logo {
+  font-family: var(--font-accent);
+  font-weight: 400;
+  font-style: normal;
+  font-size: clamp(49px, 1.5vw + 43.37px, 65px);
+}
+
+.header__text {
+  font-family: var(--font-accent);
+  font-weight: 400;
+  font-style: normal;
+  font-size: clamp(14px, 0.8451vw + 10.83px, 23px);
+  text-transform: uppercase;
 }
