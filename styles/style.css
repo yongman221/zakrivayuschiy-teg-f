@@ -32,7 +32,7 @@
 }
 
 .header {
-  margin: 99px auto;
+  margin: 100px auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -54,6 +54,10 @@
   text-transform: uppercase;
 }
 
+.card {
+  margin-bottom: 50px;
+}
+
 .card :not(:first-child) {
   display: flex;
   flex-direction: column;
@@ -63,15 +67,42 @@
 .card__heading {
   padding: 4px 10px;
   font-family: var(--main-font-family);
-  font-variation-settings: 'wdth' var(--heading-font-weight);
+  font-variation-settings: 'wght' var(--heading-font-weight);
   font-size: var(--card-text-size);
-  border-bottom: var(--accent-outline);
 }
 
 .card__image-wrapper {
   position: relative;
   block-size: 100%;
   margin: 0;
+}
+
+.card__image-content {}
+
+.card__image-label {
+  font-family: var(--font-accent);
+  font-size: 14px;
+  line-height: 100%;
+  position: absolute;
+  top: 27px;
+  right: 25px;
+  opacity: 0.5;
+  mix-blend-mode: hard-light;
+  text-shadow: -1px -1px 0 #fff,
+    0px -1px 0 #fff,
+    1px -1px 0 #fff,
+    -1px 0px 0 #fff,
+    1px 0px 0 #fff,
+    -1px 1px 0 #fff,
+    0px 1px 0 #fff,
+    1px 1px 0 #fff;
+}
+
+@supports (-webkit-text-stroke: 1px solid #fff) {
+  .card__image-label {
+    -webkit-text-stroke: 1px solid #fff;
+    text-shadow: none;
+  }
 }
 
 .card__text {
@@ -83,12 +114,12 @@
   justify-content: start;
   align-items: start;
   gap: 25px;
-  margin: 0px 25px;
+  margin: 25px 25px;
 }
 
 .card__action {
   align-self: end;
-  margin: 24px 25px;
+  margin: 0px 25px 25px 0px;
 }
 
 .card__like-button {
@@ -98,7 +129,6 @@
   justify-content: center;
   align-items: center;
   gap: 7px;
-  align-items: center;
 }
 
 .button__text {
@@ -108,4 +138,25 @@
   text-transform: capitalize;
   border: var(--accent-outline);
   padding: 11px 35px;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+}
+
+.save-button {
+  all: initial;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  border: var(--accent-outline);
+  padding: 16px 18px;
+  background-color: #fff;
+}
+
+.save-button__text {
+  font-family: var(--font-accent);
+  font-size: var(--accent-text-size);
 }
