@@ -55,13 +55,9 @@
 }
 
 .card {
-  margin-bottom: 50px;
-}
-
-.card :not(:first-child) {
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  margin-bottom: 51px;
 }
 
 .card__heading {
@@ -77,7 +73,13 @@
   margin: 0;
 }
 
-.card__image-content {}
+.card__image-content {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 
 .card__image-label {
   font-family: var(--font-accent);
@@ -114,24 +116,26 @@
   justify-content: start;
   align-items: start;
   gap: 25px;
-  margin: 25px 25px;
+  padding: 0px 25px;
+  margin-top: 25px;
 }
 
 .card__action {
   align-self: end;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  gap: 7px;
   margin: 0px 25px 25px 0px;
+  margin-top: 23px;
+}
+
+.card__icon-button {
+  all: initial;
 }
 
 .card__like-button {
   all: initial;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 7px;
-}
-
-.button__text {
   font-family: var(--font-accent);
   font-size: 14px;
   line-height: 90%;
@@ -140,23 +144,115 @@
   padding: 11px 35px;
 }
 
+
 .footer {
   display: flex;
   justify-content: center;
+  margin-bottom: 100px;
 }
 
 .save-button {
   all: initial;
   display: flex;
   flex-direction: row;
+  font-family: var(--font-accent);
+  font-size: var(--accent-text-size);
   align-items: center;
+  justify-content: center;
   gap: 8px;
   border: var(--accent-outline);
-  padding: 16px 18px;
+  padding: 14.5px 18px;
   background-color: #fff;
 }
 
-.save-button__text {
+.save-button-icon {
+  width: 21px;
+  height: 21px;
+}
+
+.save-button-icon use {
+  transform: scale(1.85);
+  transform-origin: 0 0;
+}
+
+.dialog {
+  display: none;
+  max-inline-size: 353px;
+  border: var(--accent-outline);
+  padding: 29px;
+  background-color: #fff;
+  transition: translate(-50% -50%);
+  margin: auto auto;
+}
+
+.dialog[open] {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.dialog[open]::backdrop {
+  background-color: #000;
+  opacity: 0.7;
+}
+
+.save-dialog-icon {
+  width: 39px;
+  height: 39px;
+  align-self: center;
+}
+
+.save-dialog-icon use {
+  transform: scale(1.85);
+  transform-origin: 0 0;
+}
+
+.dialog__text {
+  font-family: var(--font-accent);
+  font-size: 14px;
+  text-transform: uppercase;
+  line-height: 150%;
+}
+
+.dialog__content {
+  display: grid;
+  grid-template-columns: 39px 1fr;
+  gap: 20px;
+}
+
+.dialog__button {
+  all: initial;
   font-family: var(--font-accent);
   font-size: var(--accent-text-size);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+
+  border: var(--accent-outline);
+}
+
+@media (width <=375px) {
+  .header {
+    min-block-size: 327px;
+  }
+
+  .card__action {
+    margin-top: 25px;
+  }
+
+  .save-button {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .save-button-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .dialog {
+    padding: 30px 40px;
+    width: 341px;
+  }
 }
