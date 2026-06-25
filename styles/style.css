@@ -94,6 +94,26 @@
   filter: hue-rotate(90deg);
 }
 
+.card__image-sepia {
+  filter: sepia(1);
+}
+
+.card__image-invert {
+  filter: invert(1);
+}
+
+.card__image-grayscale {
+  filter: grayscale(0.5);
+}
+
+.card__image-saturate {
+  filter: saturate(5);
+}
+
+.card__image-tutty-frutty {
+  filter: contrast(2) hue-rotate(60deg) sepia(0.1);
+}
+
 .card__image-label {
   font-family: var(--font-accent);
   font-size: 14px;
