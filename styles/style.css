@@ -52,6 +52,7 @@
   font-style: normal;
   font-size: clamp(14px, 0.8451vw + 10.83px, 23px);
   text-transform: uppercase;
+  align-self: center;
 }
 
 .card {
@@ -158,13 +159,14 @@
   display: flex;
   flex-direction: row;
   justify-content: start;
-  gap: 7px;
   margin: 24px 25px 25px 0px;
   max-block-size: 39px;
 }
 
 .card__icon-button {
-  all: initial;
+  appearance: none;
+  background: none;
+  border: none;
   transition: border-color 0.3s ease;
   border: var(--accent-outline);
   border-color: transparent;
@@ -179,23 +181,18 @@
 }
 
 .card__like-button {
-  all: initial;
   line-height: 90%;
   text-transform: capitalize;
   border: var(--accent-outline);
-  padding: 11px 35px;
-}
-
-.footer {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 100px;
+  min-inline-size: 130px;
+  padding: 11px 0px;
 }
 
 .save-button {
-  all: initial;
   gap: 8px;
   border: var(--accent-outline);
+  margin: 0 auto;
+  margin-bottom: 100px;
   padding: 14.5px 18px;
   background-color: #fff;
 }
@@ -260,11 +257,17 @@
 }
 
 .dialog__button {
-  all: initial;
   padding: 10px 20px;
 }
 
+.dialog__button-text {
+  text-transform: uppercase;
+}
+
 .button {
+  appearance: none;
+  background: none;
+  border: none;
   border: var(--accent-outline);
   position: relative;
   font-family: var(--font-accent);

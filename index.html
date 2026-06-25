@@ -29,7 +29,7 @@
       <p class="header__text">закрывающий тег</p>
     </header>
     <main class="main">
-      <section class="card content-block">
+      <article class="card content-block">
         <h2 class="card__heading">
           Фритрек и нулевой спринт: Подготовка к работе
         </h2>
@@ -39,7 +39,7 @@
             alt="Два инопланетянина держатся за руки"
             class="card__image-content card__image-blur"
           />
-          <p class="card__image-label">&lt;/HTML&gt;</p>
+          <span href="#logo" class="card__image-label">&lt;/HTML&gt;</span>
         </figure>
         <div class="card__text">
           <p>
@@ -90,7 +90,7 @@
             <span class="button__text">Like</span>
           </button>
         </div>
-      </section>
+      </article>
       <section class="card content-block">
         <h2 class="card__heading">1 спринт: Я — чистый лист</h2>
         <figure class="card__image-wrapper">
@@ -509,32 +509,31 @@
       </section>
     </main>
 
-    <footer class="footer">
-      <button
-        type="button"
-        class="save-button button"
-        onclick="window['save-dialog-id'].showModal()"
-        aria-controls="save-dialog-id"
-      >
-        <svg class="save-button-icon" width="21" height="21">
-          <use href="./svg/floppy.svg#icon-floppy"></use>
-        </svg>
-        <span class="button__text">Сохранить на память</span>
-      </button>
-    </footer>
+    <button
+      type="button"
+      class="save-button button"
+      onclick="window['save-dialog-id'].showModal()"
+      aria-controls="save-dialog-id"
+    >
+      <svg class="save-button-icon" width="21" height="21">
+        <use href="./svg/floppy.svg#icon-floppy"></use>
+      </svg>
+      <span class="button__text">Сохранить на память</span>
+    </button>
+
     <dialog class="dialog save-dialog" id="save-dialog-id">
       <div class="dialog__content">
         <svg class="save-dialog-icon" width="39" height="39">
           <use href="./svg/floppy.svg#icon-floppy"></use>
         </svg>
-        <span class="dialog__text">вставьте дискету, чтобы продолжить</span>
+        <p class="dialog__text">вставьте дискету, чтобы продолжить</p>
       </div>
       <button
         type="button"
         class="dialog__button button"
         onclick="window['save-dialog-id'].close()"
       >
-        <span class="button__text">OK</span>
+        <span class="button__text dialog__button-text">ok</span>
       </button>
     </dialog>
 
